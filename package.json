@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "backend": "yarn workspace @coding-challenge/backend",
+    "precommit": "yarn static-ci && yarn test-ci",
+    "static-ci": "yarn typecheck && yarn lint && yarn prettier-ci",
+    "test": "jest",
+    "test-ci": "yarn test --coverage --ci --maxWorkers=2",
+    "lint": "tslint --project .",
+    "prettier-ci": "prettier --list-different 'packages/*/src/**/*.{ts,js}'",
+    "typecheck-project": "tsc --noEmit --project",
+    "foreach-tsconfig": "glob-exec --foreach 'packages/*/tsconfig.json'",
+    "typecheck": "yarn foreach-tsconfig 'yarn typecheck-project {{file.dir}}'"
+  },
+  "dependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.5",
+    "glob-exec": "^0.1.1",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.0",
+    "ts-jest": "^22.4.3",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "typescript": "^2.8.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
