@@ -1,5 +1,7 @@
 # coding-challenge
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nerdmax/coding-challenge.svg)](https://greenkeeper.io/)
+
 - [coding-challenge](#coding-challenge)
   - [Set up instructions](#set-up-instructions)
   - [About the project structure](#about-the-project-structure)
